@@ -30,5 +30,11 @@ public class ServiceController {
 	public PairedComponentDetailsBean findAll() {
 		return componentDetailsService.findAll(this.applicationName);
 	}
+	
+	@PostMapping(path= "/customers", consumes = "application/json", produces = "application/json")
+	public void registerUser(@RequestBody Customer customer)
+	{
+		customerRegService.registerUser(customer);
+	}
 
 }
